@@ -1,4 +1,5 @@
 const { PrismaClient } = require("@prisma/client");
+const { LikeSeeder } = require("./LikeSeeder");
 
 const prisma = new PrismaClient();
 
@@ -11,6 +12,7 @@ async function main() {
         await UserSeeder();
         await PostSeeder();
         await CommentSeeder();
+        await LikeSeeder();
     } catch (e) {
         console.error(e);
         process.exit(1);

@@ -60,6 +60,10 @@ const router = createBrowserRouter([
                 path: "/likes/:id",
                 element: <Likes />,
             },
+			{
+				path: "/likes/:id/:type",
+				element: <Likes />,
+			},
         ],
     },
 ]);

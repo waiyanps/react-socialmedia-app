@@ -20,11 +20,14 @@ import {
 } from "@mui/icons-material";
 
 import { deepPurple } from "@mui/material/colors";
+import { useNavigate } from "react-router-dom";
 
 import { useApp } from "../ThemedApp";
 
 export default function AppDrawer() {
 	const { showDrawer, setShowDrawer, auth, setAuth } = useApp();
+
+	const navigate = useNavigate();
 
 	return (
 		<div>
@@ -76,7 +79,7 @@ export default function AppDrawer() {
 					{auth && (
 						<>
 							<ListItem>
-								<ListItemButton onClick={() => navigate("/profile/1")}>
+								<ListItemButton onClick={() => navigate("/profile/${auth.id}")}>
 									<ListItemIcon>
 										<ProfileIcon />
 									</ListItemIcon>
